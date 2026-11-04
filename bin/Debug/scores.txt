@@ -1,0 +1,7 @@
+hamiz|70|Won
+aa|30|Lost
+ttt|30|Lost
+lk|120|Lost
+1|20|Lost
+rt|20|Lost
+ok|30|Won

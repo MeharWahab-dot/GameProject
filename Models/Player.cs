@@ -8,6 +8,7 @@ namespace GameProject.Models
         public int AttackPower { get; private set; }
         public int HealingPotions { get; private set; }
         public int Score { get; private set; }
+      
 
         public Player(string name)
         {
@@ -15,6 +16,7 @@ namespace GameProject.Models
             Health = 100;
             AttackPower = 20;
             HealingPotions = 3;
+            
         }
 
         public void TakeDamage(int damage)
@@ -32,7 +34,31 @@ namespace GameProject.Models
             return true;
         }
 
-        public void AddScore(int points) { Score = Score + points; }
+        public void AddScore(int bonus)
+        {
+            if (Health > 50 && Health < 100)
+            {
+                Score = Score + 10;
+
+            }
+            else if (Health > 0 && Health < 50)
+            {
+                Score = Score + 5;
+            }
+            else if (HealingPotions == 1)
+            {
+                Score = Score + 10;
+            }
+            else if (HealingPotions == 2)
+            {
+                Score = Score + 20;
+            }
+            else if (HealingPotions == 3)
+            {
+                Score = Score + 30;
+            }
+        }
+   
         public bool IsAlive() { return Health > 0; }
     }
 }

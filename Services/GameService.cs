@@ -49,8 +49,8 @@ namespace GameProject.Services
 
         public int CalculateVictoryBonus(Player player)
         {
-
-            return 0;
+            return 1;
+            
         }
 
         public void SaveResult(Player player, bool won)

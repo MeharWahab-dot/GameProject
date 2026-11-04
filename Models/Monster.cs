@@ -6,7 +6,7 @@ namespace GameProject.Models
         public int Health { get; private set; }
         public int AttackPower { get; private set; }
         public int ScoreValue { get; private set; }
-
+        
         public Monster(string name, int health, int attackPower, int scoreValue)
         {
             Name = name;

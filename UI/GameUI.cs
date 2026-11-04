@@ -2,6 +2,7 @@ using GameProject.Models;
 using GameProject.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace GameProject.UI
 {
@@ -49,7 +50,7 @@ namespace GameProject.UI
                 RunBattle(player, monster);
                 if (!player.IsAlive()) break;
                 _service.GiveMonsterReward(player, monster);
-                Console.WriteLine(monster.Name + " defeated! Score: " + player.Score);
+                Console.WriteLine(monster.Name + " defeated! Score: " + player.Score );
             }
 
             bool won = player.IsAlive();
@@ -105,7 +106,7 @@ namespace GameProject.UI
             if (scores.Count == 0) Console.WriteLine("No saved games yet.");
             foreach (GameResult score in scores)
                 Console.WriteLine(score.PlayerName + " - " + score.Score + " - " + score.Result);
-            Pause();
+            Pause(); 
         }
 
         private void ShowTitle()
@@ -119,13 +120,22 @@ namespace GameProject.UI
         {
             // STUDENT TODO (UI task): explain attack, healing, winning, losing,
             // and scoring here. Clear the screen first and call Pause() last.
-            Console.WriteLine("\nInstructions have not been completed yet.");
-            Pause();
-        }
+         
+            {
+                Console.Clear();
+                Console.WriteLine(" 1. If we press 1 the player attacks with its attacking power Slime goblin and dragon have attacking power of 8 12 and 16 and a addition or subtraction of 4 and 3 is selected randomly in attacking power");
+                Console.WriteLine(" 2. If we use healing potion our health increases by 25 points and if health is greater than 100 health remains 100 and portion is deducted");
+                Console.WriteLine(" 3. If we defeat two monsters and get defeated by the third one we will get 30 points beacuse of score points of slime and goblin are 10 and 20");
 
+
+            
+                Pause();
+               
+            }
+        }
         private void Pause()
         {
-            Console.WriteLine("\nPress Enter to return to the menu.");
+            Console.WriteLine("\nPress Enter to return to the menu."); 
             Console.ReadLine();
         }
     }
